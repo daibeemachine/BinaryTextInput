@@ -1,0 +1,90 @@
+div.top-buttons
+{
+    position: relative;
+    top: 10vh;
+    left: 47vw;
+}
+
+div.middle-buttons
+{
+    position: relative;
+    top: 12vh;
+    left: 47vw;
+}
+
+div.low-buttons
+{
+    position: relative;
+    top: 14vh;
+    left: 47vw;
+}
+
+.button-capsLock
+{
+    position: relative;
+    left: -210px;
+    top: -80px;
+    width: 100px;
+    height: 100px;
+    font-size:25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: white;
+}
+
+.button-0
+{
+    position: relative;
+    top: -70px;
+    left: -120px;
+    width: 100px;
+    height: 100px;
+    font-size:80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: white;
+}
+
+.button-1
+{
+    width: 100px;
+    height: 100px;
+    font-size:80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: white;
+}
+
+.button-enter
+{
+    position: relative;
+    top: -70px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    font-size:80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: white;
+}
+
+.button-backspace
+{
+    position: relative;
+    left: 100px;
+    top: 40px;
+    width: 100px;
+    height: 100px;
+    font-size:60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: white;
+}
+
+div.output
+{
+    position: relative;
+    background-color: rgb(33, 33, 33);
+    font-size:60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 15vh;
+    left: 43vw;
+    color: white;
+    height: 300px;
+    width: 500px;
+}

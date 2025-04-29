@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="BinaryInput.css">
+        </link>
+        <style>
+        </style>
+        <script>
+            const characters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ".", "?", "!", ",", ":", " "];
+            let binary = "";
+            let textContents = "";
+            let capsLock = false;
+            function addDigit(digit)
+            {
+                if(binary.length >= 5)
+                {
+                    console.log("Hey! No!");
+                }
+                else
+                {
+                    binary = digit + binary;
+                }
+                displayBinary();
+            }
+
+
+            function removeDigit()
+            {
+                if(binary.length > 0)
+                {
+                    binary = binary.substring(1, binary.length);
+                }
+                displayBinary();
+            }
+
+
+            function displayBinary()
+            {
+                let output = "";
+                while((output.length/2) < 5-binary.length)
+                {
+                    output += "_ ";
+                }
+                for(let i = 0; i < binary.length; i++)
+                {
+                    output += binary[i] + " "
+                }
+                document.getElementById("outputB").innerHTML = output;
+            }
+
+            function enterText()
+            {
+                if(binary.length > 0)
+                {
+                    let indexNumber = 0;
+                    for(let i = 0; i < binary.length; i++)
+                    {
+                        indexNumber += (Number(binary.charAt(i))*Math.pow(2, binary.length-1-i));
+                    }
+                    if(indexNumber < 26 && capsLock == true)
+                    {
+                        textContents += String.fromCharCode(65 + indexNumber);
+                    }
+                    else
+                    {
+                        textContents += characters[indexNumber];
+                    }
+                    console.log(indexNumber);
+                    document.getElementById("outputP").innerHTML = textContents;
+                }
+            }
+
+            function removeText()
+            {
+                if(binary.length > 0)
+                {
+                    removeDigit()
+                }
+                else
+                {
+                    if(textContents.length > 0)
+                    {
+                        textContents = textContents.substring(0, textContents.length-1);
+                    }
+                }
+                document.getElementById("outputP").innerHTML = textContents;
+                if(textContents.length < 1)
+                {
+                    document.getElementById("outputP").innerHTML = "[Empty]";
+                }
+            }
+
+            function toggleCapsLock()
+            {
+                capsLock = !capsLock;
+            }
+        </script>
+    </head>
+    <body style="background-color: rgb(33, 33, 33);">
+        <div class="output">
+            <p id="outputP">[Empty]</p>
+            <p id="outputB">_ _ _ _ _</p>
+        </div>
+        <div class="top-buttons">
+            <button class="button-1" onclick="addDigit(1)">
+                1
+            </button>
+        </div>
+        <div class="middle-buttons">
+            <button class="button-0" onclick="addDigit(0)">
+                0
+            </button>
+            <button class="button-enter" onclick="enterText()">
+                ↵
+            </button>
+        </div>
+        <div class="low-buttons">
+            <button class="button-capsLock" onclick="toggleCapsLock()">
+                <img src="CapsLock.png" style="width: 2.5em; height: 2.5em;"></img>
+            </button>
+            <button class="button-backspace" onclick="removeText()">
+                ⌫
+            </button>
+        </div>
+        
+    </body>
+</html>
